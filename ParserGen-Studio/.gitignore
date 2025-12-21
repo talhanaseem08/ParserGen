@@ -44,3 +44,7 @@ Thumbs.db
 # Vite
 .vite/
 
+# Documentation
+PROJECT_REPORT.md
+QUICK_START.md
+
