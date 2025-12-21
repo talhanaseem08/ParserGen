@@ -9,6 +9,12 @@ An educational web-based tool for generating LR(0) and SLR(1) parsing tables fro
 ![React](https://img.shields.io/badge/React-18.2-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## 🌐 Live Demo
+
+**Access the live application:** [https://parser-gen.vercel.app/](https://parser-gen.vercel.app/)
+
+Try it out without any installation! The live version is fully functional and ready to use.
+
 ## ✨ Features
 
 ### Core Functionality
@@ -35,6 +41,14 @@ An educational web-based tool for generating LR(0) and SLR(1) parsing tables fro
 - **Real-time Feedback**: Instant conflict detection and grammar validation
 
 ## 🚀 Quick Start
+
+### Option 1: Use Live Version (Recommended)
+
+**🌐 Access the live application:** [https://parser-gen.vercel.app/](https://parser-gen.vercel.app/)
+
+No installation required! Just open the link and start using the tool.
+
+### Option 2: Run Locally
 
 ### Prerequisites
 
