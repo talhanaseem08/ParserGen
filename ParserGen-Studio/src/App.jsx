@@ -15,6 +15,8 @@ function App() {
   const [parseResult, setParseResult] = useState(null)
   const [parsing, setParsing] = useState(false)
 
+  const API_BASE_URL = import.meta.env.VITE_API_URL || ''
+
   const handleGenerate = async (grammarTextInput, parserTypeInput = 'lr0') => {
     setLoading(true)
     setError(null)
@@ -24,7 +26,7 @@ function App() {
     setParserType(parserTypeInput)
 
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch(`${API_BASE_URL}/api/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +62,7 @@ function App() {
     setParseResult(null)
 
     try {
-      const response = await fetch('/api/parse', {
+      const response = await fetch(`${API_BASE_URL}/api/parse`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
