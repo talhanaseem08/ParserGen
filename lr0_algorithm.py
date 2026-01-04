@@ -208,8 +208,19 @@ class LR0ParserGenerator:
                 if next_sym:
                     symbols.add(next_sym)
             
+            # Sort symbols to make state creation deterministic
+            # Process start symbol first, then other non-terminals, then terminals
+            def symbol_key(s):
+                if s == self.start_symbol:
+                    return (0, s)  # Start symbol first
+                elif s in self.non_terminals:
+                    return (1, s)  # Other non-terminals second
+                else:
+                    return (2, s)  # Terminals last
+            sorted_symbols = sorted(symbols, key=symbol_key)
+            
             # Compute GOTO for each symbol
-            for symbol in symbols:
+            for symbol in sorted_symbols:
                 new_state = self.goto(current_state, symbol)
                 
                 if not new_state:
